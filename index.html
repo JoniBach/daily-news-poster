@@ -53,9 +53,12 @@
     </style>
 </head>
 <body>
-    <img src="https://cnitzqqchvvmpvqtxuvj.supabase.co/storage/v1/object/public/news-posters/poster-2026-01-16T00-29-13-847Z.png" alt="Poster">
+    <img alt="Poster">
     <div id="datetime" class="russo-one-regular" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); color: #12120f; font-size: 24px; text-shadow: -1px -1px 0 #e9d0a9, 1px -1px 0 #e9d0a9, -1px 1px 0 #e9d0a9, 1px 1px 0 #e9d0a9, -2px -2px 0 #ae3218, 2px -2px 0 #ae3218, -2px 2px 0 #ae3218, 2px 2px 0 #ae3218;"></div>
     <script>
+        const today = new Date().toISOString().split('T')[0];
+        document.querySelector('img').src = `https://cnitzqqchvvmpvqtxuvj.supabase.co/storage/v1/object/public/news-posters/poster-${today}.png`;
+        
         setInterval(() => {
             document.getElementById('datetime').innerHTML = new Date().toLocaleString();
         }, 1000);
